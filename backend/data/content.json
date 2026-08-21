@@ -1,0 +1,551 @@
+[
+  {
+    "id": "polynomials",
+    "title": "Polynomials",
+    "classification": {
+      "category": "Education",
+      "level": "10th Standard",
+      "subject": "Mathematics"
+    },
+    "content": {
+      "description": "A complete introduction to polynomials for Class 10 Mathematics, covering polynomial basics, zeros, relationships between zeros and coefficients, and important examination questions.",
+      "learningGoals": [
+        "Understand the meaning and types of polynomials.",
+        "Identify the degree and coefficients of a polynomial.",
+        "Understand the geometrical meaning of zeros of a polynomial.",
+        "Find the zeros of quadratic polynomials.",
+        "Understand the relationship between zeros and coefficients.",
+        "Solve polynomial problems using standard formulas.",
+        "Apply polynomial concepts to examination-level questions."
+      ],
+      "prerequisites": [
+        "Basic algebraic operations.",
+        "Understanding of variables and constants.",
+        "Factorisation of algebraic expressions.",
+        "Basic knowledge of quadratic equations.",
+        "Ability to solve simple linear equations."
+      ],
+      "topics": [
+        {
+          "id": "polynomial-basics",
+          "title": "Introduction to Polynomials",
+          "description": "A polynomial is an algebraic expression made up of variables, coefficients and non-negative integer powers of variables.",
+          "concepts": [
+            {
+              "title": "What is a Polynomial?",
+              "explanation": "A polynomial in one variable x is an expression of the form aₙxⁿ + aₙ₋₁xⁿ⁻¹ + ... + a₁x + a₀, where the powers of x are non-negative integers.",
+              "rule": "The powers of the variable in a polynomial must be whole numbers.",
+              "examples": [
+                "2x² + 3x + 1 is a polynomial.",
+                "5x³ - 2x + 7 is a polynomial.",
+                "x⁴ - 9 is a polynomial."
+              ]
+            },
+            {
+              "title": "Degree of a Polynomial",
+              "explanation": "The degree of a polynomial is the highest power of the variable with a non-zero coefficient.",
+              "rule": "The highest exponent of the variable gives the degree.",
+              "examples": [
+                "3x + 5 has degree 1.",
+                "4x² - 7x + 2 has degree 2.",
+                "x³ + 2x² - 5 has degree 3."
+              ]
+            }
+          ],
+          "examples": [
+            {
+              "question": "Find the degree of 5x³ - 2x² + 7x - 4.",
+              "solution": "The highest power of x is 3. Therefore, the degree is 3."
+            }
+          ],
+          "practice": [
+            {
+              "question": "What is the degree of 7x⁴ + 3x² - 5?",
+              "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "answer": "4"
+            }
+          ]
+        },
+        {
+          "id": "zeros-of-polynomial",
+          "title": "Zeros of a Polynomial",
+          "description": "A zero of a polynomial is a value of the variable for which the polynomial becomes zero.",
+          "concepts": [
+            {
+              "title": "Meaning of Zero",
+              "explanation": "If p(x) is a polynomial and p(k) = 0, then k is called a zero of p(x).",
+              "rule": "k is a zero of p(x) if and only if p(k) = 0.",
+              "examples": [
+                "For p(x) = x - 5, 5 is a zero.",
+                "For p(x) = x + 3, -3 is a zero."
+              ]
+            },
+            {
+              "title": "Geometrical Meaning",
+              "explanation": "The zeroes of a polynomial are the x-coordinates of the points where the graph of y = p(x) intersects or touches the x-axis.",
+              "rule": "The number of zeroes corresponds to the number of points where the graph meets the x-axis."
+            }
+          ],
+          "examples": [
+            {
+              "question": "Find the zero of p(x) = 2x - 6.",
+              "solution": "2x - 6 = 0, so x = 3. Therefore the zero is 3."
+            },
+            {
+              "question": "Find the zeroes of x² - 5x + 6.",
+              "solution": "x² - 5x + 6 = (x - 2)(x - 3). Therefore the zeroes are 2 and 3."
+            }
+          ],
+          "practice": [
+            {
+              "question": "What is the zero of p(x) = x - 7?",
+              "options": [
+                "5",
+                "6",
+                "7",
+                "8"
+              ],
+              "answer": "7"
+            }
+          ]
+        }
+      ],
+      "revision": [
+        "A polynomial contains variables with non-negative integer powers.",
+        "The highest power gives the degree.",
+        "A zero k satisfies p(k) = 0.",
+        "For ax² + bx + c, sum of zeroes = -b/a.",
+        "For ax² + bx + c, product of zeroes = c/a."
+      ],
+      "examTips": [
+        "Identify a, b and c correctly before using formulas.",
+        "Check zeroes by substitution.",
+        "Write formulas before substituting values.",
+        "Show algebraic steps clearly."
+      ],
+      "commonMistakes": [
+        "Forgetting the negative sign in -b/a.",
+        "Using the wrong coefficient.",
+        "Making sign errors during factorisation.",
+        "Confusing zeroes with coefficients."
+      ],
+      "test": [
+        {
+          "question": "What is the degree of 4x³ - 2x + 7?",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "answer": "3"
+        },
+        {
+          "question": "What is the zero of x - 9?",
+          "options": [
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "answer": "9"
+        }
+      ],
+      "sources": [
+        {
+          "title": "NCERT Class 10 Mathematics",
+          "note": "Class 10 Mathematics textbook.",
+          "url": "https://ncert.nic.in/textbook.php"
+        }
+      ]
+    },
+    "sources": [
+      {
+        "title": "NCERT Class 10 Mathematics",
+        "note": "Class 10 Mathematics textbook.",
+        "url": "https://ncert.nic.in/textbook.php"
+      }
+    ],
+    "status": "draft",
+    "version": 1,
+    "verification": {
+      "verified": false,
+      "lastVerified": null,
+      "verifiedBy": null
+    }
+  },
+  {
+    "id": "quadratic-equations",
+    "title": "Quadratic Equations",
+    "classification": {
+      "category": "Education",
+      "level": "10th Standard",
+      "subject": "Mathematics"
+    },
+    "content": {
+      "description": "A complete Class 10 Mathematics chapter covering quadratic equations, their standard form, methods of solving, discriminant, nature of roots and applications.",
+
+      "learningGoals": [
+        "Understand the meaning of a quadratic equation.",
+        "Identify the standard form ax² + bx + c = 0.",
+        "Solve quadratic equations by factorisation.",
+        "Solve quadratic equations using the quadratic formula.",
+        "Understand the discriminant.",
+        "Determine the nature of roots.",
+        "Apply quadratic equations to real-life problems."
+      ],
+
+      "prerequisites": [
+        "Basic algebraic operations.",
+        "Factorisation of algebraic expressions.",
+        "Linear equations in one variable.",
+        "Basic understanding of polynomials.",
+        "Arithmetic operations with fractions."
+      ],
+
+      "topics": [
+        {
+          "id": "quadratic-standard-form",
+          "title": "Introduction to Quadratic Equations",
+          "description": "A quadratic equation in one variable is an equation of the form ax² + bx + c = 0, where a is not zero.",
+
+          "concepts": [
+            {
+              "title": "Standard Form",
+              "explanation": "The standard form of a quadratic equation is ax² + bx + c = 0, where a, b and c are real numbers and a ≠ 0.",
+              "formula": "ax² + bx + c = 0",
+              "rule": "The coefficient of x² must not be zero.",
+              "examples": [
+                "x² + 5x + 6 = 0 is a quadratic equation.",
+                "2x² - 7x + 3 = 0 is a quadratic equation.",
+                "3x² - 12 = 0 is a quadratic equation."
+              ]
+            },
+            {
+              "title": "Identifying a, b and c",
+              "explanation": "In ax² + bx + c = 0, a is the coefficient of x², b is the coefficient of x and c is the constant term.",
+              "examples": [
+                "For 2x² + 5x - 3 = 0, a = 2, b = 5 and c = -3.",
+                "For x² - 7x + 10 = 0, a = 1, b = -7 and c = 10."
+              ]
+            }
+          ],
+
+          "examples": [
+            {
+              "question": "Identify a, b and c in 3x² - 5x - 2 = 0.",
+              "solution": "Comparing with ax² + bx + c = 0, we get a = 3, b = -5 and c = -2."
+            }
+          ],
+
+          "practice": [
+            {
+              "question": "What is a in 4x² - 7x + 2 = 0?",
+              "options": [
+                "2",
+                "-7",
+                "4",
+                "-2"
+              ],
+              "answer": "4"
+            }
+          ]
+        },
+
+        {
+          "id": "factorisation-method",
+          "title": "Solving by Factorisation",
+          "description": "A quadratic equation can often be solved by expressing its left-hand side as a product of two linear factors.",
+
+          "concepts": [
+            {
+              "title": "Factorisation Method",
+              "explanation": "To solve a quadratic equation by factorisation, first bring the equation to standard form, factorise it and then use the zero-product property.",
+              "steps": [
+                "Bring all terms to one side.",
+                "Write the equation in standard form.",
+                "Factorise the quadratic expression.",
+                "Set each factor equal to zero.",
+                "Solve the resulting linear equations."
+              ],
+              "rule": "If AB = 0, then A = 0 or B = 0."
+            }
+          ],
+
+          "examples": [
+            {
+              "question": "Solve x² - 5x + 6 = 0.",
+              "solution": "Factorise: x² - 5x + 6 = (x - 2)(x - 3). Therefore x - 2 = 0 or x - 3 = 0. Hence x = 2 or x = 3."
+            },
+            {
+              "question": "Solve x² - 7x + 12 = 0.",
+              "solution": "x² - 7x + 12 = (x - 3)(x - 4). Therefore x = 3 or x = 4."
+            }
+          ],
+
+          "practice": [
+            {
+              "question": "Solve x² - 9x + 20 = 0.",
+              "options": [
+                "2 and 10",
+                "4 and 5",
+                "3 and 6",
+                "1 and 20"
+              ],
+              "answer": "4 and 5"
+            }
+          ]
+        },
+
+        {
+          "id": "quadratic-formula",
+          "title": "Quadratic Formula",
+          "description": "The quadratic formula can be used to solve any quadratic equation in standard form.",
+
+          "concepts": [
+            {
+              "title": "The Formula",
+              "explanation": "For ax² + bx + c = 0, the roots can be found directly using the quadratic formula.",
+              "formula": "x = (-b ± √(b² - 4ac)) / 2a",
+              "steps": [
+                "Write the equation in standard form.",
+                "Identify a, b and c.",
+                "Calculate b² - 4ac.",
+                "Substitute a, b and c in the quadratic formula.",
+                "Simplify both possible values of x."
+              ]
+            }
+          ],
+
+          "examples": [
+            {
+              "question": "Solve x² - 5x + 6 = 0 using the quadratic formula.",
+              "solution": "Here a = 1, b = -5 and c = 6. x = (5 ± √25 - 24)/2 = (5 ± 1)/2. Therefore x = 3 or x = 2."
+            },
+            {
+              "question": "Solve 2x² + 3x - 2 = 0.",
+              "solution": "Here a = 2, b = 3 and c = -2. x = (-3 ± √(9 + 16))/4 = (-3 ± 5)/4. Therefore x = 1/2 or x = -2."
+            }
+          ],
+
+          "practice": [
+            {
+              "question": "What is the quadratic formula?",
+              "options": [
+                "x = (-b ± √(b² - 4ac))/2a",
+                "x = (b ± √(b² + 4ac))/2a",
+                "x = (-b ± √(b² + 4ac))/a",
+                "x = (b ± √(b² - 4ac))/a"
+              ],
+              "answer": "x = (-b ± √(b² - 4ac))/2a"
+            }
+          ]
+        },
+
+        {
+          "id": "discriminant",
+          "title": "Discriminant and Nature of Roots",
+          "description": "The discriminant helps determine whether a quadratic equation has two real roots, equal roots or no real roots.",
+
+          "concepts": [
+            {
+              "title": "Discriminant",
+              "explanation": "For ax² + bx + c = 0, the discriminant is the expression under the square root in the quadratic formula.",
+              "formula": "D = b² - 4ac",
+              "rule": "D > 0 gives two distinct real roots. D = 0 gives two equal real roots. D < 0 gives no real roots."
+            },
+            {
+              "title": "Nature of Roots",
+              "explanation": "The sign of the discriminant determines the nature of the roots.",
+              "examples": [
+                "If D = 25, the equation has two distinct real roots.",
+                "If D = 0, the equation has two equal real roots.",
+                "If D = -4, the equation has no real roots."
+              ]
+            }
+          ],
+
+          "examples": [
+            {
+              "question": "Find the nature of roots of x² - 6x + 9 = 0.",
+              "solution": "D = (-6)² - 4(1)(9) = 36 - 36 = 0. Therefore the equation has two equal real roots."
+            },
+            {
+              "question": "Find the nature of roots of x² + x + 1 = 0.",
+              "solution": "D = 1 - 4 = -3. Since D < 0, there are no real roots."
+            }
+          ],
+
+          "practice": [
+            {
+              "question": "If D > 0, the quadratic equation has:",
+              "options": [
+                "No real roots",
+                "Two distinct real roots",
+                "Two equal real roots",
+                "One non-real root only"
+              ],
+              "answer": "Two distinct real roots"
+            }
+          ]
+        },
+
+        {
+          "id": "quadratic-applications",
+          "title": "Applications of Quadratic Equations",
+          "description": "Quadratic equations can be used to solve problems involving areas, numbers, speeds, dimensions and other real-life situations.",
+
+          "concepts": [
+            {
+              "title": "Forming a Quadratic Equation",
+              "explanation": "Word problems are translated into mathematical equations by defining a variable and expressing the given relationships in terms of that variable.",
+              "steps": [
+                "Read the problem carefully.",
+                "Define the unknown quantity as x.",
+                "Translate the given information into an equation.",
+                "Simplify the equation into quadratic form.",
+                "Solve the equation.",
+                "Reject values that do not satisfy the conditions of the problem."
+              ]
+            }
+          ],
+
+          "examples": [
+            {
+              "question": "The product of two consecutive positive integers is 56. Find the integers.",
+              "solution": "Let the first integer be x. The next is x + 1. Therefore x(x + 1) = 56, giving x² + x - 56 = 0. Factorising gives (x + 8)(x - 7) = 0. Since the integers are positive, x = 7. The integers are 7 and 8."
+            }
+          ],
+
+          "practice": [
+            {
+              "question": "The product of two consecutive positive integers is 72. Which equation represents the problem?",
+              "options": [
+                "x² + x - 72 = 0",
+                "x² - x - 72 = 0",
+                "x² + 72x - 1 = 0",
+                "x² - 72 = 0"
+              ],
+              "answer": "x² + x - 72 = 0"
+            }
+          ]
+        }
+      ],
+
+      "revision": [
+        "Standard form: ax² + bx + c = 0, where a ≠ 0.",
+        "A quadratic equation has degree 2.",
+        "Factorisation can be used when the quadratic expression can be conveniently factorised.",
+        "Quadratic formula: x = (-b ± √(b² - 4ac)) / 2a.",
+        "Discriminant: D = b² - 4ac.",
+        "D > 0 means two distinct real roots.",
+        "D = 0 means two equal real roots.",
+        "D < 0 means no real roots.",
+        "Always check whether a solution is valid for the original word problem."
+      ],
+
+      "examTips": [
+        "Always write the equation in standard form first.",
+        "Identify a, b and c carefully, including their signs.",
+        "Use brackets when substituting negative values.",
+        "Write the discriminant calculation clearly.",
+        "When using factorisation, verify both factors.",
+        "For word problems, reject solutions that violate the conditions.",
+        "Check the final answer by substitution whenever possible."
+      ],
+
+      "commonMistakes": [
+        "Forgetting that a cannot be zero.",
+        "Using b instead of -b in the quadratic formula.",
+        "Writing b² - 4ac incorrectly.",
+        "Forgetting the ± sign.",
+        "Dividing by 2 instead of 2a.",
+        "Making sign errors when a or c is negative.",
+        "Accepting an invalid negative length or negative quantity in a word problem."
+      ],
+
+      "test": [
+        {
+          "question": "Which is the standard form of a quadratic equation?",
+          "options": [
+            "ax + b = 0",
+            "ax² + bx + c = 0",
+            "ax³ + bx + c = 0",
+            "a/x + b = 0"
+          ],
+          "answer": "ax² + bx + c = 0"
+        },
+        {
+          "question": "What is the discriminant of ax² + bx + c = 0?",
+          "options": [
+            "b² + 4ac",
+            "b² - 4ac",
+            "4ac - b²",
+            "a² - 4bc"
+          ],
+          "answer": "b² - 4ac"
+        },
+        {
+          "question": "If the discriminant is zero, the equation has:",
+          "options": [
+            "Two distinct real roots",
+            "Two equal real roots",
+            "No real roots",
+            "Three real roots"
+          ],
+          "answer": "Two equal real roots"
+        },
+        {
+          "question": "What are the roots of x² - 5x + 6 = 0?",
+          "options": [
+            "1 and 6",
+            "2 and 3",
+            "-2 and -3",
+            "3 and 5"
+          ],
+          "answer": "2 and 3"
+        },
+        {
+          "question": "Which formula solves ax² + bx + c = 0?",
+          "options": [
+            "x = (-b ± √(b² - 4ac)) / 2a",
+            "x = (b ± √(b² - 4ac)) / 2a",
+            "x = (-b ± √(b² + 4ac)) / a",
+            "x = (b ± √(b² + 4ac)) / 2"
+          ],
+          "answer": "x = (-b ± √(b² - 4ac)) / 2a"
+        }
+      ],
+
+      "sources": [
+        {
+          "title": "NCERT Class 10 Mathematics",
+          "note": "Class 10 Mathematics textbook, Quadratic Equations chapter.",
+          "url": "https://ncert.nic.in/textbook.php"
+        }
+      ]
+    },
+
+    "sources": [
+      {
+        "title": "NCERT Class 10 Mathematics",
+        "note": "Class 10 Mathematics textbook.",
+        "url": "https://ncert.nic.in/textbook.php"
+      }
+    ],
+
+    "status": "draft",
+    "version": 1,
+
+    "verification": {
+      "verified": false,
+      "lastVerified": null,
+      "verifiedBy": null
+    }
+  }
+]
