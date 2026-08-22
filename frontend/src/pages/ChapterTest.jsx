@@ -1,6 +1,30 @@
 import { useState } from "react";
 
-function ChapterTest({ questions = [], title = "Chapter Test" }) {
+const STORAGE_KEY = "ags-progress";
+
+function saveProgress(entry) {
+  try {
+    const current = JSON.parse(
+      localStorage.getItem(STORAGE_KEY) || "[]"
+    );
+    const filtered = current.filter(
+      (item) => item.topicId !== entry.topicId
+    );
+
+    localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify([entry, ...filtered])
+    );
+  } catch (error) {
+    console.error("Unable to save progress.", error);
+  }
+}
+
+function ChapterTest({
+  questions = [],
+  title = "Chapter Test",
+  topicId,
+}) {
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState({});
   const [submitted, setSubmitted] = useState(false);
@@ -10,8 +34,7 @@ function ChapterTest({ questions = [], title = "Chapter Test" }) {
       <div className="lesson-card">
         <h3>🎯 Chapter Test</h3>
         <p>
-          The test questions for this chapter are being
-          prepared.
+          The test questions for this chapter are being prepared.
         </p>
       </div>
     );
@@ -28,24 +51,26 @@ function ChapterTest({ questions = [], title = "Chapter Test" }) {
     });
   };
 
-  const nextQuestion = () => {
-    if (current < questions.length - 1) {
-      setCurrent(current + 1);
-    }
-  };
+  const calculateScore = () =>
+    questions.reduce(
+      (score, item, index) =>
+        score + (answers[index] === item.answer ? 1 : 0),
+      0
+    );
 
-  const previousQuestion = () => {
-    if (current > 0) {
-      setCurrent(current - 1);
-    }
-  };
+  const finishTest = () => {
+    const score = calculateScore();
 
-  const calculateScore = () => {
-    return questions.reduce((score, item, index) => {
-      return score + (
-        answers[index] === item.answer ? 1 : 0
-      );
-    }, 0);
+    saveProgress({
+      topicId: topicId || title,
+      title,
+      score,
+      total: questions.length,
+      percentage: Math.round((score / questions.length) * 100),
+      date: new Date().toISOString(),
+    });
+
+    setSubmitted(true);
   };
 
   const restartTest = () => {
@@ -62,42 +87,29 @@ function ChapterTest({ questions = [], title = "Chapter Test" }) {
 
     return (
       <div className="test-result">
-
         <div className="test-result-icon">
-          {percentage >= 80
-            ? "🏆"
-            : percentage >= 50
-            ? "👍"
-            : "📚"}
+          {percentage >= 80 ? "🏆" : percentage >= 50 ? "👍" : "📚"}
         </div>
 
-        <div className="eyebrow">
-          TEST COMPLETED
-        </div>
-
+        <div className="eyebrow">TEST COMPLETED</div>
         <h2>{title}</h2>
 
         <div className="score-number">
           {score}/{questions.length}
         </div>
 
-        <h3>
-          {percentage}%
-        </h3>
+        <h3>{percentage}%</h3>
 
         <p>
           {percentage >= 80
             ? "Excellent work! You have a strong understanding of this chapter."
             : percentage >= 50
             ? "Good attempt. Review the incorrect answers and try again."
-            : "Keep practising. Go through the concepts again and retake the test."}
+            : "Keep practising. Review the concepts and retake the test."}
         </p>
 
         <div className="answer-review">
-
-          <h3>
-            📋 Answer Review
-          </h3>
+          <h3>📋 Answer Review</h3>
 
           {questions.map((item, index) => {
             const userAnswer = answers[index];
@@ -118,84 +130,67 @@ function ChapterTest({ questions = [], title = "Chapter Test" }) {
 
                 <p>
                   Your answer:{" "}
-                  <strong>
-                    {userAnswer || "Not answered"}
-                  </strong>
+                  <strong>{userAnswer || "Not answered"}</strong>
                 </p>
 
                 <p>
-                  Correct answer:{" "}
-                  <strong>
-                    {item.answer}
-                  </strong>
+                  Correct answer: <strong>{item.answer}</strong>
                 </p>
 
                 <span>
-                  {correct
-                    ? "✓ Correct"
-                    : "✗ Incorrect"}
+                  {correct ? "✓ Correct" : "✗ Incorrect"}
                 </span>
               </div>
             );
           })}
-
         </div>
 
-        <button
-          className="primary-action"
-          onClick={restartTest}
-        >
-          🔄 Retake Test
-        </button>
+        <div className="chapter-actions">
+          <button
+            className="primary-action"
+            onClick={restartTest}
+          >
+            🔄 Retake Test
+          </button>
 
+          <a href="/progress" className="secondary-action">
+            📊 View Progress
+          </a>
+        </div>
       </div>
     );
   }
 
   return (
     <div className="chapter-test">
-
       <div className="test-header">
-
         <div>
-          <div className="eyebrow">
-            CHAPTER TEST
-          </div>
-
-          <h2>
-            {title}
-          </h2>
+          <div className="eyebrow">CHAPTER TEST</div>
+          <h2>{title}</h2>
         </div>
 
         <div className="question-counter">
           Question {current + 1} of {questions.length}
         </div>
-
       </div>
 
       <div className="progress-bar">
         <div
           className="progress-fill"
           style={{
-            width: `${
-              ((current + 1) / questions.length) * 100
-            }%`,
+            width: `${((current + 1) / questions.length) * 100}%`,
           }}
         />
       </div>
 
       <div className="test-question">
-
         <h3>
           {current + 1}. {question.question}
         </h3>
 
         <div className="test-options">
-
           {question.options.map((option) => {
-
-            const selected =
-              answers[current] === option;
+            const selected = answers[current] === option;
 
             return (
               <button
@@ -205,55 +200,47 @@ function ChapterTest({ questions = [], title = "Chapter Test" }) {
                     ? "test-option selected"
                     : "test-option"
                 }
-                onClick={() =>
-                  selectAnswer(option)
-                }
+                onClick={() => selectAnswer(option)}
               >
-                <span>
-                  {selected ? "✓" : "○"}
-                </span>
-
+                <span>{selected ? "✓" : "○"}</span>
                 {option}
               </button>
             );
           })}
-
         </div>
-
       </div>
 
       <div className="test-navigation">
-
         <button
           className="secondary-action"
-          onClick={previousQuestion}
+          onClick={() =>
+            setCurrent((value) => Math.max(0, value - 1))
+          }
           disabled={current === 0}
         >
           ← Previous
         </button>
 
         {current < questions.length - 1 ? (
-
           <button
             className="primary-action"
-            onClick={nextQuestion}
+            onClick={() =>
+              setCurrent((value) =>
+                Math.min(questions.length - 1, value + 1)
+              )
+            }
           >
             Next →
           </button>
-
         ) : (
-
           <button
             className="primary-action"
-            onClick={() => setSubmitted(true)}
+            onClick={finishTest}
           >
             Submit Test ✓
           </button>
-
         )}
-
       </div>
-
     </div>
   );
 }
