@@ -1,12 +1,9 @@
-import { Link } from "react-router-dom";
-
 const chapters = [
   {
     number: "01",
     title: "Real Numbers",
     description:
       "Learn number systems, Euclid's division algorithm, HCF and LCM.",
-    path: "/education/10th-standard/mathematics/real-numbers",
   },
   {
     number: "02",
@@ -25,6 +22,7 @@ const chapters = [
     title: "Quadratic Equations",
     description:
       "Understand quadratic equations, roots and solving methods.",
+    path: "/topic/quadratic-equations",
   },
   {
     number: "05",
@@ -68,83 +66,107 @@ function Mathematics() {
   return (
     <main className="page">
       <section className="page-hero">
-        <div className="eyebrow">
-          10TH STANDARD • MATHEMATICS
-        </div>
+        <div className="eyebrow">10TH STANDARD • MATHEMATICS</div>
 
         <h2>Mathematics</h2>
 
         <p>
-          Learn mathematics chapter by chapter with
-          simple explanations, examples, practice
-          questions and tests.
+          Learn mathematics chapter by chapter with simple explanations,
+          examples, practice questions and tests.
         </p>
       </section>
 
       <section className="education-grid">
         {chapters.map((chapter) => (
-          <article
-            className="education-card"
-            key={chapter.number}
-          >
-            <div className="education-icon">
-              {chapter.number}
-            </div>
+          <article className="education-card" key={chapter.number}>
+            <div className="education-icon">{chapter.number}</div>
 
             <h3>{chapter.title}</h3>
 
             <p>{chapter.description}</p>
 
-            <div className="subject-list">
-              <span>Notes</span>
-              <span>Practice</span>
-              <span>Test</span>
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "8px",
+                marginTop: "18px",
+                marginBottom: "20px",
+              }}
+            >
+              <span
+                style={{
+                  padding: "6px 10px",
+                  borderRadius: "999px",
+                  background: "#f4f7ff",
+                  color: "#315adf",
+                  fontSize: "13px",
+                  fontWeight: 600,
+                }}
+              >
+                Notes
+              </span>
+
+              <span
+                style={{
+                  padding: "6px 10px",
+                  borderRadius: "999px",
+                  background: "#f4f7ff",
+                  color: "#315adf",
+                  fontSize: "13px",
+                  fontWeight: 600,
+                }}
+              >
+                Practice
+              </span>
+
+              <span
+                style={{
+                  padding: "6px 10px",
+                  borderRadius: "999px",
+                  background: "#f4f7ff",
+                  color: "#315adf",
+                  fontSize: "13px",
+                  fontWeight: 600,
+                }}
+              >
+                Test
+              </span>
             </div>
 
             {chapter.path ? (
-              <Link
-                to={chapter.path}
-                className="primary-action"
-              >
+              <a href={chapter.path} className="primary-action">
                 Open Chapter →
-              </Link>
+              </a>
             ) : (
-              <button
-                className="primary-action"
-                onClick={() =>
-                  alert(
-                    `${chapter.title} chapter will be added next!`
-                  )
-                }
+              <span
+                className="secondary-action"
+                style={{
+                  display: "inline-flex",
+                  opacity: 0.7,
+                  cursor: "default",
+                }}
               >
-                Open Chapter →
-              </button>
+                Coming Soon
+              </span>
             )}
           </article>
         ))}
       </section>
 
       <section className="mock-start-card">
-        <div className="mock-icon">
-          🧠
-        </div>
+        <div className="mock-icon">🧠</div>
 
-        <h3>
-          Need help with Mathematics?
-        </h3>
+        <h3>Need help with Mathematics?</h3>
 
         <p>
-          Ask AGS to explain a mathematical concept
-          in simple language and work through problems
-          step by step.
+          Ask AGS to explain a mathematical concept in simple language
+          and work through problems step by step.
         </p>
 
-        <Link
-          to="/"
-          className="primary-action"
-        >
+        <a href="/" className="primary-action">
           Ask AGS →
-        </Link>
+        </a>
       </section>
     </main>
   );
