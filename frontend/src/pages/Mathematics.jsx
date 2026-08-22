@@ -76,97 +76,113 @@ function Mathematics() {
         </p>
       </section>
 
-      <section className="education-grid">
-        {chapters.map((chapter) => (
-          <article className="education-card" key={chapter.number}>
-            <div className="education-icon">{chapter.number}</div>
-
-            <h3>{chapter.title}</h3>
-
-            <p>{chapter.description}</p>
-
-            <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                gap: "8px",
-                marginTop: "18px",
-                marginBottom: "20px",
-              }}
-            >
-              <span
+      <section className="explore-section">
+        <div className="explore-grid">
+          {chapters.map((chapter) => (
+            <article className="explore-card" key={chapter.number}>
+              <div
                 style={{
-                  padding: "6px 10px",
-                  borderRadius: "999px",
-                  background: "#f4f7ff",
-                  color: "#315adf",
+                  marginBottom: "14px",
+                  color: "#3155d9",
                   fontSize: "13px",
-                  fontWeight: 600,
+                  fontWeight: 800,
+                  letterSpacing: "1px",
                 }}
               >
-                Notes
-              </span>
+                CHAPTER {chapter.number}
+              </div>
 
-              <span
+              <h3>{chapter.title}</h3>
+
+              <p>{chapter.description}</p>
+
+              <div
                 style={{
-                  padding: "6px 10px",
-                  borderRadius: "999px",
-                  background: "#f4f7ff",
-                  color: "#315adf",
-                  fontSize: "13px",
-                  fontWeight: 600,
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: "8px",
+                  marginTop: "18px",
+                  marginBottom: "20px",
                 }}
               >
-                Practice
-              </span>
+                <span
+                  style={{
+                    padding: "6px 10px",
+                    borderRadius: "999px",
+                    background: "#edf2ff",
+                    color: "#3155d9",
+                    fontSize: "12px",
+                    fontWeight: 700,
+                  }}
+                >
+                  Notes
+                </span>
 
-              <span
-                style={{
-                  padding: "6px 10px",
-                  borderRadius: "999px",
-                  background: "#f4f7ff",
-                  color: "#315adf",
-                  fontSize: "13px",
-                  fontWeight: 600,
-                }}
-              >
-                Test
-              </span>
-            </div>
+                <span
+                  style={{
+                    padding: "6px 10px",
+                    borderRadius: "999px",
+                    background: "#edf2ff",
+                    color: "#3155d9",
+                    fontSize: "12px",
+                    fontWeight: 700,
+                  }}
+                >
+                  Practice
+                </span>
 
-            {chapter.path ? (
-              <a href={chapter.path} className="primary-action">
-                Open Chapter →
-              </a>
-            ) : (
-              <span
-                className="secondary-action"
-                style={{
-                  display: "inline-flex",
-                  opacity: 0.7,
-                  cursor: "default",
-                }}
-              >
-                Coming Soon
-              </span>
-            )}
-          </article>
-        ))}
-      </section>
+                <span
+                  style={{
+                    padding: "6px 10px",
+                    borderRadius: "999px",
+                    background: "#edf2ff",
+                    color: "#3155d9",
+                    fontSize: "12px",
+                    fontWeight: 700,
+                  }}
+                >
+                  Test
+                </span>
+              </div>
 
-      <section className="mock-start-card">
-        <div className="mock-icon">🧠</div>
+              {chapter.path ? (
+                <a
+                  href={chapter.path}
+                  className="primary-button"
+                  style={{ width: "100%" }}
+                >
+                  Open Chapter →
+                </a>
+              ) : (
+                <span
+                  className="secondary-button"
+                  style={{
+                    width: "100%",
+                    opacity: 0.7,
+                    cursor: "default",
+                  }}
+                >
+                  Coming Soon
+                </span>
+              )}
+            </article>
+          ))}
+        </div>
 
-        <h3>Need help with Mathematics?</h3>
+        <section className="mock-start-card">
+          <div className="mock-icon">🧠</div>
 
-        <p>
-          Ask AGS to explain a mathematical concept in simple language
-          and work through problems step by step.
-        </p>
+          <h3>Need help with Mathematics?</h3>
 
-        <a href="/" className="primary-action">
-          Ask AGS →
-        </a>
+          <p>
+            Ask AGS to explain a mathematical concept in simple language
+            and work through problems step by step.
+          </p>
+
+          <a href="/" className="primary-button">
+            Ask AGS →
+          </a>
+        </section>
       </section>
     </main>
   );
